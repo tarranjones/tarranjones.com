@@ -38,7 +38,18 @@
     "vlucas/phpdotenv": "^2.0.1",
     "johnpbloch/wordpress": "4.6.1",
     "oscarotero/env": "^1.0",
-    "roots/wp-password-bcrypt": "1.0.0"
+    "roots/wp-password-bcrypt": "1.0.0",
+    "wpackagist-plugin/safe-redirect-manager": "^1.7",
+    "wpackagist-plugin/advanced-excerpt": "^4.2",
+    "wpackagist-plugin/wordpress-seo": "^3.9",
+    "wpackagist-plugin/advanced-custom-fields": "^4.4",
+    "wpackagist-plugin/jetpack": "^4.4",
+    "wpackagist-plugin/w3-total-cache": "0.9.5.1",
+    "roots/soil": "^3.7",
+    "wpackagist-plugin/limit-login-attempts": "^1.7",
+    "wp-sync-db/wp-sync-db": "dev-master@dev",
+    "wp-sync-db/wp-sync-db-media-files": "dev-master",
+    "roots/wp-stage-switcher": "^2.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
