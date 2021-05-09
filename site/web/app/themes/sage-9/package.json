@@ -51,7 +51,7 @@
     "imagemin-webpack-plugin": "^1.2.1",
     "imports-loader": "^0.6.5",
     "loader-utils": "^0.2.16",
-    "lodash": "^4.16.6",
+    "lodash": "^4.17.21",
     "minimist": "^1.2.0",
     "monkey-hot-loader": "github:rmarscher/monkey-hot-loader#webpack2-import",
     "node-sass": "^3.11.2",
