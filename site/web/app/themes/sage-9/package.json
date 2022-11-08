@@ -50,7 +50,7 @@
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-webpack-plugin": "^1.2.1",
     "imports-loader": "^0.6.5",
-    "loader-utils": "^0.2.16",
+    "loader-utils": "^1.4.1",
     "lodash": "^4.16.6",
     "minimist": "^1.2.0",
     "monkey-hot-loader": "github:rmarscher/monkey-hot-loader#webpack2-import",
