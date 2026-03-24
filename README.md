@@ -250,3 +250,16 @@ This is a personal website, but feel free to open issues or suggest improvements
 ---
 
 Built with ❤️ by Tarran Jones
+=======
+# tarranjones.com
+
+Code examples and tutorials.
+
+## Live Site
+
+Visit: [tarranjones.com](https://tarranjones.com)
+
+## License
+
+All rights reserved.
+>>>>>>> abdb9e6 (Initial commit)
