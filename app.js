@@ -5,11 +5,6 @@ let showEOL = false;
 
 // Load example on page load
 document.addEventListener('DOMContentLoaded', async () => {
-    // For MVP, we'll hardcode the path to our example
-    // In future, this will be dynamic based on URL routing
-    const examplePath = 'content/php/examples/functions/array_filter';
-    await loadExample(examplePath);
-
     // Set up EOL toggle
     document.getElementById('toggle-eol').addEventListener('change', (e) => {
         showEOL = e.target.checked;
