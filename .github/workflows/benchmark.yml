@@ -1,0 +1,43 @@
+name: Run Benchmarks
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'content/php/**/*.php'
+  workflow_dispatch:
+
+jobs:
+  benchmark-php:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: ['5.6', '7.4', '8.0', '8.1', '8.2', '8.3']
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP ${{ matrix.php-version }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: mbstring, json
+          coverage: none
+
+      - name: Install PHPBench
+        run: |
+          composer require phpbench/phpbench --dev --no-interaction
+
+      - name: Run Benchmarks
+        run: |
+          echo "Running benchmarks for PHP ${{ matrix.php-version }}"
+          # Future: Run PHPBench on all example files
+          # For MVP, this is a placeholder
+
+      - name: Upload benchmark results
+        uses: actions/upload-artifact@v3
+        with:
+          name: benchmark-results-php-${{ matrix.php-version }}
+          path: benchmarks/

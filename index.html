@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TarranJones.com - Code Examples Across Languages & Versions</title>
+    <meta name="description" content="Explore code examples, benchmarks, and performance comparisons across different programming languages and versions.">
+
+    <!-- Highlight.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css">
+
+    <!-- Chart.js for benchmarks -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>TarranJones.com</h1>
+                <p class="tagline">Code Examples, Benchmarks & Cross-Version Analysis</p>
+            </div>
+            <nav>
+                <a href="/" class="active">Examples</a>
+                <a href="#packages">Packages</a>
+                <a href="#posts">Posts</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- AdSense Placeholder - Top Banner -->
+    <div class="ad-container ad-top">
+        <div class="ad-placeholder">
+            <span>Advertisement</span>
+        </div>
+    </div>
+
+    <main class="container">
+        <nav class="breadcrumb">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <a href="/php">PHP</a>
+            <span class="separator">/</span>
+            <a href="/php/examples">Examples</a>
+            <span class="separator">/</span>
+            <a href="/php/examples/functions">Functions</a>
+            <span class="separator">/</span>
+            <span class="current">array_filter</span>
+        </nav>
+
+        <article class="example-page">
+            <!-- Example Header -->
+            <header class="example-header">
+                <div class="example-meta">
+                    <span class="badge badge-php">PHP</span>
+                    <span class="badge badge-function">Function</span>
+                </div>
+                <h1 id="example-title">Loading...</h1>
+                <p id="example-description" class="description"></p>
+                <div id="example-tags" class="tags"></div>
+            </header>
+
+            <!-- Controls -->
+            <div class="controls">
+                <label class="toggle-eol">
+                    <input type="checkbox" id="toggle-eol">
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Show EOL Versions</span>
+                </label>
+            </div>
+
+            <!-- Version Tabs -->
+            <div class="version-tabs" id="version-tabs">
+                <!-- Dynamically generated tabs -->
+            </div>
+
+            <!-- Code Display with macOS Window Style -->
+            <div class="code-window">
+                <!-- macOS Window Title Bar -->
+                <div class="window-titlebar">
+                    <div class="window-controls">
+                        <span class="window-control close"></span>
+                        <span class="window-control minimize"></span>
+                        <span class="window-control maximize"></span>
+                    </div>
+                    <div class="window-title" id="window-filename">array_filter.php</div>
+                    <div class="window-actions">
+                        <button class="icon-btn" onclick="copyCode()" title="Copy code">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M5.75 4.75H10.25C10.6642 4.75 11 5.08579 11 5.5V13.25C11 13.6642 10.6642 14 10.25 14H5.75C5.33579 14 5 13.6642 5 13.25V5.5C5 5.08579 5.33579 4.75 5.75 4.75Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M10.75 2H5.75V4.5H10.75V2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Code Info Bar -->
+                <div class="code-info-bar">
+                    <div class="code-language">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+                            <circle cx="8" cy="8" r="2" fill="#10b981"/>
+                        </svg>
+                        <span id="current-version-label"></span>
+                    </div>
+                    <div class="code-stats">
+                        <span id="line-count">0 lines</span>
+                    </div>
+                </div>
+
+                <!-- Code Content -->
+                <div class="code-content">
+                    <pre><code id="code-display" class="language-php"></code></pre>
+                </div>
+            </div>
+
+            <!-- AdSense Placeholder - Mid Content -->
+            <div class="ad-container ad-mid">
+                <div class="ad-placeholder">
+                    <span>Advertisement</span>
+                </div>
+            </div>
+
+            <!-- Benchmark Section -->
+            <section class="benchmark-section">
+                <h2>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 2L12 8H18L13 12L15 18L10 14L5 18L7 12L2 8H8L10 2Z" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                    Performance Benchmarks
+                </h2>
+
+                <div class="benchmark-controls">
+                    <button class="tab-btn active" onclick="toggleBenchmarkView('chart')">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <rect x="2" y="10" width="3" height="4" fill="currentColor"/>
+                            <rect x="6.5" y="6" width="3" height="8" fill="currentColor"/>
+                            <rect x="11" y="2" width="3" height="12" fill="currentColor"/>
+                        </svg>
+                        Chart
+                    </button>
+                    <button class="tab-btn" onclick="toggleBenchmarkView('table')">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <rect x="2" y="2" width="12" height="12" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <line x1="2" y1="6" x2="14" y2="6" stroke="currentColor" stroke-width="1.5"/>
+                            <line x1="2" y1="10" x2="14" y2="10" stroke="currentColor" stroke-width="1.5"/>
+                            <line x1="8" y1="2" x2="8" y2="14" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        Table
+                    </button>
+                </div>
+
+                <div id="benchmark-chart" class="benchmark-view active">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+
+                <div id="benchmark-table" class="benchmark-view">
+                    <div class="table-wrapper">
+                        <table id="benchmark-data-table">
+                            <!-- Dynamically generated -->
+                        </table>
+                    </div>
+                </div>
+
+                <div id="benchmark-analysis" class="benchmark-analysis">
+                    <!-- Dynamically generated -->
+                </div>
+            </section>
+
+            <!-- Related Content -->
+            <section class="related-content">
+                <h2>Related Content</h2>
+
+                <div class="related-grid">
+                    <div id="related-examples" class="related-section">
+                        <h3>
+                            <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 2L10 6H14L11 9L12 13L8 10L4 13L5 9L2 6H6L8 2Z"/>
+                            </svg>
+                            Similar Examples
+                        </h3>
+                        <div class="related-links" id="related-examples-links">
+                            <!-- Dynamically generated -->
+                        </div>
+                    </div>
+
+                    <div id="related-packages" class="related-section">
+                        <h3>
+                            <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
+                                <rect x="2" y="4" width="12" height="10" rx="1"/>
+                                <path d="M2 6H14V4H2V6Z"/>
+                            </svg>
+                            Related Packages
+                        </h3>
+                        <div class="related-links" id="related-packages-links">
+                            <!-- Dynamically generated -->
+                        </div>
+                    </div>
+
+                    <div id="related-posts" class="related-section">
+                        <h3>
+                            <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
+                                <rect x="3" y="2" width="10" height="12" rx="1"/>
+                                <line x1="5" y1="5" x2="11" y2="5" stroke="white" stroke-width="1"/>
+                                <line x1="5" y1="8" x2="11" y2="8" stroke="white" stroke-width="1"/>
+                                <line x1="5" y1="11" x2="9" y2="11" stroke="white" stroke-width="1"/>
+                            </svg>
+                            Related Posts
+                        </h3>
+                        <div class="related-links" id="related-posts-links">
+                            <!-- Dynamically generated -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- AdSense Placeholder - Bottom Banner -->
+    <div class="ad-container ad-bottom">
+        <div class="ad-placeholder">
+            <span>Advertisement</span>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 TarranJones.com</p>
+                <p class="footer-links">
+                    <a href="https://github.com/tarranjones">GitHub</a>
+                    <span>•</span>
+                    <a href="/privacy">Privacy</a>
+                    <span>•</span>
+                    <a href="/terms">Terms</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/php.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

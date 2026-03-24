@@ -1,0 +1,18 @@
+{
+    "name": "tarranjones/code-examples",
+    "description": "Code examples, benchmarks, and cross-version analysis",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpbench/phpbench": "^1.2",
+        "rector/rector": "^1.0"
+    },
+    "scripts": {
+        "benchmark": "phpbench run --report=default",
+        "rector": "rector process --dry-run",
+        "rector:fix": "rector process"
+    }
+}

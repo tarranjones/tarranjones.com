@@ -1,0 +1,30 @@
+name: Check for New PHP Releases
+
+on:
+  schedule:
+    # Run every day at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  check-php-releases:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check for new PHP releases
+        run: |
+          echo "Checking for new PHP releases..."
+          # Fetch latest PHP releases from php.net
+          LATEST_PHP=$(curl -s https://www.php.net/releases/index.php?json | jq -r '.[] | select(.version | startswith("8")) | .version' | head -1)
+          echo "Latest PHP version: $LATEST_PHP"
+
+          # Future: Compare with tracked versions and create an issue or PR if new version is found
+          # For MVP, this is a placeholder for the automation
+
+      - name: Create issue if new version found
+        # This would create a GitHub issue when a new PHP version is detected
+        # Requires GitHub token and issue creation logic
+        run: |
+          echo "Future: Create GitHub issue for new PHP version"

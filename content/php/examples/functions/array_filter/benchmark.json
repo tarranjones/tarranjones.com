@@ -1,0 +1,78 @@
+{
+  "benchmarkDate": "2026-03-24T00:00:00Z",
+  "testEnvironment": {
+    "os": "Linux",
+    "cpu": "AMD Ryzen 9 5950X",
+    "memory": "32GB"
+  },
+  "testData": {
+    "description": "Filtering 100,000 integers for even numbers",
+    "iterations": 1000,
+    "arraySize": 100000
+  },
+  "results": {
+    "php8.3": {
+      "version": "8.3.4",
+      "avgTime": 0.0234,
+      "minTime": 0.0198,
+      "maxTime": 0.0312,
+      "memoryUsage": 8388608,
+      "unit": "seconds"
+    },
+    "php8.2": {
+      "version": "8.2.17",
+      "avgTime": 0.0241,
+      "minTime": 0.0205,
+      "maxTime": 0.0325,
+      "memoryUsage": 8388608,
+      "unit": "seconds"
+    },
+    "php8.1": {
+      "version": "8.1.27",
+      "avgTime": 0.0256,
+      "minTime": 0.0218,
+      "maxTime": 0.0342,
+      "memoryUsage": 8388608,
+      "unit": "seconds"
+    },
+    "php8.0": {
+      "version": "8.0.30",
+      "avgTime": 0.0267,
+      "minTime": 0.0229,
+      "maxTime": 0.0358,
+      "memoryUsage": 8388608,
+      "unit": "seconds"
+    },
+    "php7.4": {
+      "version": "7.4.33",
+      "avgTime": 0.0298,
+      "minTime": 0.0254,
+      "maxTime": 0.0389,
+      "memoryUsage": 8388608,
+      "unit": "seconds"
+    },
+    "php7.3": {
+      "version": "7.3.33",
+      "avgTime": 0.0312,
+      "minTime": 0.0267,
+      "maxTime": 0.0412,
+      "memoryUsage": 8388608,
+      "unit": "seconds"
+    },
+    "php5.6": {
+      "version": "5.6.40",
+      "avgTime": 0.0489,
+      "minTime": 0.0421,
+      "maxTime": 0.0623,
+      "memoryUsage": 8388608,
+      "unit": "seconds",
+      "note": "EOL version - significantly slower due to older engine"
+    }
+  },
+  "analysis": {
+    "fastestVersion": "php8.3",
+    "slowestVersion": "php5.6",
+    "performanceGain": "52.4% faster in PHP 8.3 vs PHP 5.6",
+    "recommendation": "Upgrade to PHP 8.3 for optimal performance"
+  }
+}
